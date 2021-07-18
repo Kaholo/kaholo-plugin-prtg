@@ -1,0 +1,14 @@
+{
+  "name": "kaholo-plugin-prtg",
+  "version": "1.0.0",
+  "description": "Kaholo plugin for intgration with PRTG API",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kaholo Team(Amit Alon)",
+  "license": "ISC",
+  "dependencies": {
+    "node-prtg": "^0.4.1"
+  }
+}
