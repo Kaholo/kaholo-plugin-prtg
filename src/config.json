@@ -1,73 +1,74 @@
 {
-    "name": "PRTG",
-    "type": "executer",
-    "execProgram": "node",
-    "main": "app.js",
-    "exposeRoute": false,
-    "imgUrl": "logo.png",
-    "version": "1.0.0",
-    "description": "Integration with PRTG API",
-    "settings": [
+  "name": "PRTG",
+  "type": "executer",
+  "execProgram": "node",
+  "main": "app.js",
+  "exposeRoute": false,
+  "imgUrl": "logo.png",
+  "version": "1.0.2",
+  "description": "Integration with PRTG API",
+  "settings": [
+    {
+      "name": "url",
+      "viewName": "PRTG Server URL",
+      "type": "string"
+    },
+    {
+      "name": "username",
+      "viewName": "Username",
+      "type": "string"
+    },
+    {
+      "name": "passhash",
+      "viewName": "Passhash",
+      "type": "vault"
+    }
+  ],
+  "methods": [
+    {
+      "name": "getSensor",
+      "viewName": "Get Sensor",
+      "params": [
         {
-            "name":"url",
-            "viewName":"PRTG Server URL",
-            "type":"string"
-        },
-        {
-            "name":"username",
-            "viewName":"Username",
-            "type":"string"
-        },
-        {
-            "name":"passhash",
-            "viewName":"Passhash",
-            "type":"vault"
+          "name": "sensor",
+          "viewName": "Sensor",
+          "type": "autocomplete",
+          "autocompleteType": "function",
+          "functionName": "listSensors"
         }
-    ],
-    "methods":[
+      ]
+    },
+    {
+      "name": "pauseSensor",
+      "viewName": "Pause Sensor",
+      "params": [
         {
-            "name":"getSensor",
-            "viewName":"Get Sensor",
-            "params": [
-                {
-                    "name": "sensor",
-                    "viewName": "Sensor",
-                    "type": "autocomplete",
-                    "autocompleteType":"function",
-                    "functionName":"listSensors"
-                }
-            ]
+          "name": "sensor",
+          "viewName": "Sensor",
+          "type": "autocomplete",
+          "autocompleteType": "function",
+          "functionName": "listSensors"
         },
         {
-            "name":"pauseSensor",
-            "viewName": "Pause Sensor",
-            "params": [
-                {
-                    "name": "sensor",
-                    "viewName": "Sensor",
-                    "type": "autocomplete",
-                    "autocompleteType":"function",
-                    "functionName":"listSensors"
-                },
-                {
-                    "name": "message",
-                    "viewName": "Message",
-                    "type": "string"
-                }
-            ]
-        },
-        {
-            "name":"resumeSensor",
-            "viewName": "Resume Sensor",
-            "params": [
-                {
-                    "name": "sensor",
-                    "viewName": "Sensor",
-                    "type": "autocomplete",
-                    "autocompleteType":"function",
-                    "functionName":"listSensors"
-                }
-            ]
+          "name": "message",
+          "viewName": "Message",
+          "type": "string"
         }
-    ]
+      ]
+    },
+    {
+      "name": "resumeSensor",
+      "viewName": "Resume Sensor",
+      "params": [
+        {
+          "name": "sensor",
+          "viewName": "Sensor",
+          "type": "autocomplete",
+          "autocompleteType": "function",
+          "functionName": "listSensors"
+        }
+      ]
+    }
+  ],
+  "category": "MONITORING"
 }
